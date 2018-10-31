@@ -26,7 +26,7 @@ void led_set(uint8_t usb_led)
         DDRF |= (1<<7);
         PORTF |= (1<<7);
     } else {
-        // Hi-Z
+        DDRF |= (1<<7);
         PORTF &= ~(1<<7);
     }
     if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
@@ -34,7 +34,6 @@ void led_set(uint8_t usb_led)
         DDRF |= (1<<6);
         PORTF |= (1<<6);
     } else {
-        // Hi-Z
         DDRF |= (1<<6);
         PORTF &= ~(1<<6);
     }
@@ -43,7 +42,6 @@ void led_set(uint8_t usb_led)
         DDRF |= (1<<5);
         PORTF |= (1<<5);
     } else {
-        // Hi-Z
         DDRF |= (1<<5);
         PORTF &= ~(1<<5);
     }	
