@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "matrix.h"
 
 #ifndef DEBOUNCE
-#   define DEBOUNCE	5
+#define DEBOUNCE 5
 #endif
 static uint8_t debouncing = DEBOUNCE;
 
@@ -40,7 +40,6 @@ static matrix_row_t read_cols(void);
 static void init_cols(void);
 static void unselect_rows(void);
 static void select_row(uint8_t row);
-
 
 void matrix_init(void)
 {
@@ -94,7 +93,7 @@ matrix_row_t matrix_get_row(uint8_t row)
  * col: 0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20
  * pin: B6  B5  B7  D0  D1  D2  D3  D4  D5  D6  D7  E0  E1  C0  C1  C2  C3  C4  C5  C6  C7
  */
-static void  init_cols(void)
+static void init_cols(void)
 {
     // Input with pull-up(DDR:0, PORT:1)
     DDRB  &= ~(1<<6 | 1<<5 | 1<<7);
@@ -109,27 +108,27 @@ static void  init_cols(void)
 
 static matrix_row_t read_cols(void)
 {
-    return (PINB&(1<<6) ? 0 : (1<<0)) |
-           (PINB&(1<<5) ? 0 : (1<<1)) |
-           (PINB&(1<<7) ? 0 : (1<<2)) |
-           (PIND&(1<<0) ? 0 : (1<<3)) |
-           (PIND&(1<<1) ? 0 : (1<<4)) |
-           (PIND&(1<<2) ? 0 : (1<<5)) |
-           (PIND&(1<<3) ? 0 : (1<<6)) |
-           (PIND&(1<<4) ? 0 : (1<<7)) |
-           (PIND&(1<<5) ? 0 : (1<<8)) |
-           (PIND&(1<<6) ? 0 : (1<<9)) |
-           (PIND&(1<<7) ? 0 : (1<<10)) |
-           (PINE&(1<<0) ? 0 : (1<<11)) |
-           (PINE&(1<<1) ? 0 : (1<<12)) |
-           (PINC&(1<<0) ? 0 : (1<<13)) |
-           (PINC&(1<<1) ? 0 : (1<<14)) |
-           (PINC&(1<<2) ? 0 : (1<<15)) |
-           (PINC&(1<<3) ? 0 : (1<<16)) |
-           (PINC&(1<<4) ? 0 : (1<<17)) |
-           (PINC&(1<<5) ? 0 : (1<<18)) |
-           (PINC&(1<<6) ? 0 : (1<<19)) |
-           (PINC&(1<<7) ? 0 : (1<<20));
+    return (PINB&(1<<6) ? 0 : (1UL<<0)) |
+           (PINB&(1<<5) ? 0 : (1UL<<1)) |
+           (PINB&(1<<7) ? 0 : (1UL<<2)) |
+           (PIND&(1<<0) ? 0 : (1UL<<3)) |
+           (PIND&(1<<1) ? 0 : (1UL<<4)) |
+           (PIND&(1<<2) ? 0 : (1UL<<5)) |
+           (PIND&(1<<3) ? 0 : (1UL<<6)) |
+           (PIND&(1<<4) ? 0 : (1UL<<7)) |
+           (PIND&(1<<5) ? 0 : (1UL<<8)) |
+           (PIND&(1<<6) ? 0 : (1UL<<9)) |
+           (PIND&(1<<7) ? 0 : (1UL<<10)) |
+           (PINE&(1<<0) ? 0 : (1UL<<11)) |
+           (PINE&(1<<1) ? 0 : (1UL<<12)) |
+           (PINC&(1<<0) ? 0 : (1UL<<13)) |
+           (PINC&(1<<1) ? 0 : (1UL<<14)) |
+           (PINC&(1<<2) ? 0 : (1UL<<15)) |
+           (PINC&(1<<3) ? 0 : (1UL<<16)) |
+           (PINC&(1<<4) ? 0 : (1UL<<17)) |
+           (PINC&(1<<5) ? 0 : (1UL<<18)) |
+           (PINC&(1<<6) ? 0 : (1UL<<19)) |
+           (PINC&(1<<7) ? 0 : (1UL<<20));
 }
 
 /* Row pin configuration
