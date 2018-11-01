@@ -1,6 +1,5 @@
 #include "keymap_common.h"
-// K84 key map
-//https://github.com/kekstee/tmk_keyboard/tree/master/keyboard/nerd
+// K104 key map
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Keymap 0: Default Layer
      * ,-----------------------------------------------------------------------------------------------------.
