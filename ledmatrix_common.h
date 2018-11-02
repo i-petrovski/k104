@@ -8,8 +8,8 @@
 
 // Screen Count
 // #define screenCount 1;
-#define screenCount 4
-#define _maximumX 32
+#define screenCount 2
+#define _maximumX 16
 
 // define High and Low bit.
 #define LEDON 1
