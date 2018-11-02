@@ -1,4 +1,8 @@
 #include "keymap_common.h"
+#include "ledmatrix_common.h"
+#include "ledmatrix_k104.h"
+#include "timer.h"
+uint16_t my_led_timer;
 // K104 key map
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Keymap 0: Default Layer
@@ -51,3 +55,29 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const action_t PROGMEM fn_actions[] = {
     [0]  = ACTION_LAYER_MOMENTARY(1),
 };
+
+// init matrix ics 
+void hook_early_init(void) 
+{
+    led_matrix_init();
+}
+
+// Run test loop
+void hook_keyboard_loop(void)
+{
+    uint8_t y;
+    if (timer_elapsed(my_led_timer) > 500)
+    {
+        my_led_timer = timer_read();
+        for (y=0; y<104; ++y)
+        {
+            write(LEDARR[y][0],LEDARR[y][1],LEDON);
+            //_delay_ms(speed);
+        }
+    }
+    write(LED_RGHT,LEDON);
+    write(LED_LEFT,LEDON);
+    write(LED_DOWN,LEDON);
+    write(LED_UP,LEDON);
+    //set_register(0x01,0b11111111);
+}
