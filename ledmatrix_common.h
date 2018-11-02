@@ -156,8 +156,8 @@ void write(uint8_t x, uint8_t y, uint8_t value)
 
 void led_matrix_init(void)
 {
-  // B1=Clock B2=DIN B3=Load Date
-  // Enable ports B1,B2,B3
+  // B0=Clock B1=Load B2=Din
+  // Enable ports B0,B1,B2
   DDRB |= (1 << 0) | (1 << 1) | (1 << 2);
 
   // Start Pins low
