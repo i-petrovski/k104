@@ -69,7 +69,8 @@ void hook_keyboard_loop(void)
     if (timer_elapsed(my_led_timer) > 500)
     {
         my_led_timer = timer_read();
-        for (y=0; y<104; ++y)
+        ++y;
+        if (y<104)
         {
             write(LEDARR[y][0],LEDARR[y][1],LEDON);
             //_delay_ms(speed);
