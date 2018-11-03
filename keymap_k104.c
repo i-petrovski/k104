@@ -76,9 +76,9 @@ void hook_keyboard_loop(void)
             //_delay_ms(speed);
         }
     }
-    write(LED_RGHT,LEDON);
-    write(LED_LEFT,LEDON);
-    write(LED_DOWN,LEDON);
-    write(LED_UP,LEDON);
+    //write(LED_RGHT,LEDON);
+    //write(LED_LEFT,LEDON);
+    //write(LED_DOWN,LEDON);
+    //write(LED_UP,LEDON);
     //set_register(0x01,0b11111111);
 }
