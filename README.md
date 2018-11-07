@@ -60,6 +60,7 @@ pin       2     11    6     7     3     10    5     8
  17 SEGG                          
  22 SEGDP
 
+
 Clock pin 13 ---> pin B0 Teensy
 Load  pin 12 ---> pin B1 Teensy
 DIN   pin 1  ---> pin B2 Teensy
