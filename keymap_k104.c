@@ -62,7 +62,9 @@ void hook_early_init(void)
     led_matrix_init();
 }
 
+
 // Run test loop
+/*
 void hook_keyboard_loop(void)
 {
     uint8_t y;
@@ -82,3 +84,4 @@ void hook_keyboard_loop(void)
     //write(LED_UP,LEDON);
     //set_register(0x01,0b11111111);
 }
+*/
