@@ -139,8 +139,8 @@ static void unselect_rows(void)
 {
     // Hi-Z(DDR:0, PORT:0) to unselect
     //pin       76543210
-    DDRF  &= ~0b00011110;
-    PORTF &= ~0b00011110;
+    DDRF  &= ~0b00011111;
+    PORTF &= ~0b00011111;
     DDRE  &= ~0b01000000;
     PORTE &= ~0b01000000;
 }
