@@ -4,7 +4,8 @@
 #include "timer.h"
 #include <util/delay.h>
 
-uint16_t my_led_timer;
+uint16_t my_led_timer=0;
+uint16_t array_row=0;
 // K104 key map
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Keymap 0: Default Layer
@@ -66,7 +67,7 @@ void hook_early_init(void)
 
     // TEST LED STARTUP
     // Power all LED on
-    uint16_t array_row;
+    
     for (array_row=0; array_row<104; array_row++)
     {
         write(LEDARR[array_row][0],LEDARR[array_row][1],LEDON);
@@ -78,7 +79,7 @@ void hook_early_init(void)
         write(LEDARR[array_row][0],LEDARR[array_row][1],LEDOFF);
         _delay_ms(10);
     }
-
+    array_row = 0;
     // Power on WASD
     write(LED_W,LEDON);
     write(LED_A,LEDON);
@@ -90,21 +91,15 @@ void hook_early_init(void)
 /*
 void hook_keyboard_loop(void)
 {
-    uint8_t y;
     if (timer_elapsed(my_led_timer) > 500)
     {
         my_led_timer = timer_read();
-        ++y;
-        if (y<104)
+        ++array_row;
+        if (array_row<104)
         {
-            write(LEDARR[y][0],LEDARR[y][1],LEDON);
-            //_delay_ms(speed);
+            write(LEDARR[array_row][0],LEDARR[array_row][1],LEDON);
         }
     }
-    //write(LED_RGHT,LEDON);
-    //write(LED_LEFT,LEDON);
-    //write(LED_DOWN,LEDON);
-    //write(LED_UP,LEDON);
-    //set_register(0x01,0b11111111);
 }
 */
+
