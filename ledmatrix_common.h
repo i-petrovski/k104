@@ -84,7 +84,8 @@ void set_buffer(uint8_t x, uint8_t y, uint8_t value)
     x = 8;
   }
   --x;
-  //y = y + 1;
+
+  
   // record value in buffer
   if(value)
   {
@@ -107,7 +108,7 @@ void sync_row(uint8_t row)
   for(i = 0; i < screen_count; ++i)
   {
     set_byte(row + 1);                // specify register
-    //set_byte(row);
+    //set_byte(8 - row);
     set_byte(led_buffer[row + (8 * i)]); // send data
   }
   // latch in data
@@ -168,7 +169,7 @@ void led_matrix_init(void)
   // initialize registers
   clear_screen();                      // clear display
   set_scan_limit(0x07);                // use all rows/digits 1:0x00 - 8:0x07
-  set_brightness(0x02);                // maximum brightness 0x00 - 0x0F (290ma for 104led max power)
+  set_brightness(0x0F);                // maximum brightness 0x00 - 0x0F (290ma for 104led max power)
   set_register(REG_SHUTDOWN, 0x01);    // normal operation Disabled:0x00 
   set_register(REG_DECODEMODE, 0x00);  // no decode 0x00 0x00-0xFF
   set_register(REG_DISPLAYTEST, 0x00); // not in test mode
