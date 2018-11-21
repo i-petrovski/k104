@@ -1,8 +1,8 @@
 /*
 K104 Matrix key mapping MAX7219
              |                  IC2 - MAX7219          |    
-             0     1     2     3     4     5     6     7    
-    pin      2     11    6     7     3     10    5     8     
+    Y        0     1     2     3     4     5     6     7    
+X   pin      2     11    6     7     3     10    5     8     
              DIG0  DIG1  DIG2  DIG3  DIG4  DIG5  DIG6  DIG7  
 15  14 SEGA  I     O     P     LBRC  LBRC  BSLS  DEL   END
 14  16 SEGB  K     L     SCLN  QUOT  ENT   P4    P5    P6
@@ -13,7 +13,9 @@ K104 Matrix key mapping MAX7219
  9  17 SWGG 
  8  22 SWGDP
               |                  IC1 - MAX7219          |
-              0     1     2     3     4     5     6     7    
+    Y         0     1     2     3     4     5     6     7 
+ X  pin       2     11    6     7     3     10    5     8 
+             DIG0  DIG1  DIG2  DIG3  DIG4  DIG5  DIG6  DIG7  
  7  14 SEGA  LCTL  LGUI  LALT  SPC   RALT  RGUI  FN0   RCRL  
  6  16 SEGB  LSFT  Z     X     C     V     B     N     M     
  5  20 SEGC  CAPS  A     S     D     F     G     H     J     
