@@ -2,6 +2,7 @@
 #include "ledmatrix_common.h"
 #include "ledmatrix_k104.h"
 #include "timer.h"
+#include "led.h"
 #include <util/delay.h>
 
 uint16_t my_led_timer=0;
@@ -63,43 +64,10 @@ const action_t PROGMEM fn_actions[] = {
 void hook_early_init(void) 
 {
     led_matrix_init();
-
-
-    // TEST LED STARTUP
-    // Power all LED on
-    
+    // Power all LED on  
     for (array_row=0; array_row<104; array_row++)
     {
         write(LEDARR[array_row][0],LEDARR[array_row][1],LEDON);
-        _delay_ms(20);
-    }
-    // Power all LED off
-    for (array_row=0; array_row<104; array_row++)
-    {
-        write(LEDARR[array_row][0],LEDARR[array_row][1],LEDOFF);
         _delay_ms(10);
     }
-    array_row = 0;
-    // Power on WASD
-    write(LED_W,LEDON);
-    write(LED_A,LEDON);
-    write(LED_S,LEDON);
-    write(LED_D,LEDON);
-}
-
-// Run test loop
-/*
-void hook_keyboard_loop(void)
-{
-    if (timer_elapsed(my_led_timer) > 500)
-    {
-        my_led_timer = timer_read();
-        ++array_row;
-        if (array_row<104)
-        {
-            write(LEDARR[array_row][0],LEDARR[array_row][1],LEDON);
-        }
-    }
-}
-*/
-
+ }
