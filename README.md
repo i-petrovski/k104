@@ -24,9 +24,9 @@ Scroll lock F5
 
 Backlight Tyeensy to MAX7219 
 ----------------------------
-Clock  B0 ---> pin 13 IC1 & IC2
-Load   B1 ---> pin 12 IC1 & IC2
-Data   B2 ---> pin 1  IC2
+Clock  B0 ---> pin 13 IC1 & IC2  
+Load   B1 ---> pin 12 IC1 & IC2  
+Data   B2 ---> pin 1  IC2  
 
 MAX7219 pin configuration
 -------------------------
@@ -44,9 +44,9 @@ IC1 - MAX7219
 | 17 |SWGG | F8   |F9   |F10  |F11  |F12  |PSCR |SLCK |PAUS |
 | 22 |SWGDP| 8    | 9   |0    |MINS |EQL  |BSPC |INT  |HOME | 
 
-Clock pin 13 ---> pin B0 Teensy
-Load  pin 12 ---> pin B1 Teensy
-DIN   pin 1  ---> pin 24 IC2 (DOUT)
+Clock pin 13 ---> pin B0 Teensy  
+Load  pin 12 ---> pin B1 Teensy  
+DIN   pin 1  ---> pin 24 IC2 (DOUT)  
 
 IC2 - MAX7219 
 -------------
@@ -62,9 +62,7 @@ IC2 - MAX7219
 | 17 |SEGG |      |     |     |     |     |     |     |     |
 | 22 |SEGDP|      |     |     |     |     |     |     |     |
 
-
-
-Clock pin 13 ---> pin B0 Teensy
-Load  pin 12 ---> pin B1 Teensy
-DIN   pin 1  ---> pin B2 Teensy
-DOUT  pin 24 ---> pin 1  IC1 (DIN)
+Clock pin 13 ---> pin B0 Teensy  
+Load  pin 12 ---> pin B1 Teensy  
+DIN   pin 1  ---> pin B2 Teensy  
+DOUT  pin 24 ---> pin 1  IC1 (DIN)  
